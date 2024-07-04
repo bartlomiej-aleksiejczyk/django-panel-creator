@@ -1,0 +1,31 @@
+{
+  "content": [
+    {
+      "link": "https://mysite.invalid/users/",
+      "iconLink": "https://img.icons8.com/?size=100&id=6i0wNATb63Qv&format=png&color=000000",
+      "defaultName": "Users",
+      "id": "users",
+      "type": "link"
+    },
+    {
+      "defaultName": "Settings",
+      "type": "container",
+      "id": "settings",
+      "objects": [
+        {
+          "link": "https://mysite.invalid/security/",
+          "iconLink": "https://mysite.invalid/security.svg",
+          "defaultName": "Security",
+          "id": "security",
+          "type": "link"
+        },
+        {
+          "link": "https://mysite.invalid/privacy/",
+          "defaultName": "Privacy",
+          "id": "privacy",
+          "type": "link"
+        }
+      ]
+    }
+  ]
+}

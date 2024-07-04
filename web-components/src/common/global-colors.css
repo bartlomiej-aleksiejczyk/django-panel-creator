@@ -1,0 +1,29 @@
+:root {
+  /* Primary palette */
+  --color-primary: #26547c;
+  --color-primary-dark: #1b375a;
+  --color-primary-light: #4c7298;
+
+  /* Accent palette */
+  --color-accent: #50bfe6;
+
+  /* Neutral palette */
+  --color-background: #fafafa;
+  --color-surface: #ffffff;
+  --color-border: #cccccc;
+
+  /* Text colors */
+  --color-text-primary: #212121;
+  --color-text-secondary: #646464;
+  --color-text-on-primary: #ffffff;
+
+  /* Feedback colors for UI status messages */
+  --color-success: #48a23f;
+  --color-info: #31a2f2;
+  --color-warning: #ffa726;
+  --color-error: #e53935;
+
+  /* Interactive states */
+  --color-hover: #4c7298;
+  --color-disabled: #e0e0e0;
+}
