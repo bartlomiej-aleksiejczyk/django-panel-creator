@@ -5,6 +5,8 @@
 
 .topbar {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: var(--color-primary);
   color: var(--color-text-on-primary);
   align-items: center;

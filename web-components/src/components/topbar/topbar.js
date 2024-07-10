@@ -8,7 +8,12 @@ class DynamicTopbar extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.innerHTML = `
       <style>${styles}</style>
-      <div class="topbar"></div>
+      <div class="topbar">
+      <div class="topbar__custom-items">
+      </div>
+      <div class="topbar__fixed-items">
+      </div>
+      </div>
     `;
   }
 
@@ -28,6 +33,12 @@ class DynamicTopbar extends HTMLElement {
 
   render(data) {
     const topbarReference = this.shadowRoot.querySelector(".topbar");
+    const topbarCustomItemsSectionReference = this.shadowRoot.querySelector(
+      ".topbar__custom-items"
+    );
+    const topbarFixedItemsSectionReference = this.shadowRoot.querySelector(
+      ".topbar__fixed-items"
+    );
     const topbarItems = data.content;
 
     try {
