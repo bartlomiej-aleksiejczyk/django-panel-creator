@@ -25,8 +25,15 @@ export default function mapTopbarItems(items, topbarReference) {
         const linkEl = document.createElement("a");
         linkEl.className = "topbar__dropdown-link";
         linkEl.href = subItem.link;
+
+        //TODO: Add dropdown enlarge when dropdown option text wraps, prrevent siuation when container is small so dowpdown is outside screen
         //TODO: add a falback for this behaviour as it does not look good
-        linkEl.innerHTML = `<img src="${subItem.iconLink}" alt="${subItem.defaultName} Icon">${subItem.defaultName}`;
+        if (subItem.iconLink) {
+          linkEl.innerHTML = `<img src="${subItem.iconLink}" alt="${subItem.defaultName} Icon">${subItem.defaultName}`;
+        } else {
+          linkEl.innerHTML = `${subItem.defaultName}`;
+        }
+
         dropdownNode
           .querySelector(".topbar__dropdown-content")
           .appendChild(linkEl);

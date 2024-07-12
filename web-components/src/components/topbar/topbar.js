@@ -1,5 +1,6 @@
 import styles from "./topbar.css?inline";
 import mapTopbarItems from "./mapTopbarItems";
+import { fixedTopbarItems } from "./fixedTopbatItems";
 import validateTopbarItems from "./validateTopbarItems";
 
 class DynamicTopbar extends HTMLElement {
@@ -9,10 +10,8 @@ class DynamicTopbar extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>${styles}</style>
       <div class="topbar">
-      <div class="topbar__custom-items">
-      </div>
-      <div class="topbar__fixed-items">
-      </div>
+        <div class="topbar__custom-items"></div>
+        <div class="topbar__fixed-items"></div>
       </div>
     `;
   }
@@ -42,7 +41,11 @@ class DynamicTopbar extends HTMLElement {
     const topbarItems = data.content;
 
     try {
-      mapTopbarItems(topbarItems, topbarReference);
+      mapTopbarItems(topbarItems, topbarCustomItemsSectionReference);
+      mapTopbarItems(
+        fixedTopbarItems.content,
+        topbarFixedItemsSectionReference
+      );
     } catch (error) {
       console.error("Error rendering top bar items:", error);
       topbarReference.innerHTML = `<p>Error displaying top bar items.</p>`;
